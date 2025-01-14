@@ -1,18 +1,25 @@
-import { useState, useEffect } from "react";
+import s from "../HomePage/HomePage.module.css";
+import { fetchTrendingMovies } from "../../services/api";
+import { useEffect, useState } from "react";
 import MovieList from "../../components/MovieList/MovieList";
-import { getTrendingMovies } from "../../api/tmdb-api";
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    getTrendingMovies().then(setMovies).catch(console.error);
+    const loadMovies = async () => {
+      const data = await fetchTrendingMovies();
+      setMovies(data);
+    };
+    loadMovies();
   }, []);
 
   return (
-    <div>
-      <h1>Trending Movies</h1>
+    <div className={s.div}>
+      <h1 className={s.title}>Top films</h1>
       <MovieList movies={movies} />
     </div>
   );
 };
+
+export default HomePage;
