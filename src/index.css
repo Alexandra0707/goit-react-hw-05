@@ -1,6 +1,38 @@
-body {
-  font-family: sans-serif;
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 1460px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+.section {
+  padding-block: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
 h1,
@@ -17,13 +49,12 @@ ul,
 ol {
   margin: 0;
   padding: 0;
-}
-
-ul {
-  list-style-type: none;
+  list-style: none;
 }
 
 img {
   display: block;
+  height: auto;
   max-width: 100%;
+  object-fit: cover;
 }

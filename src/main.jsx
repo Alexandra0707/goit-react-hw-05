@@ -1,11 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "modern-normalize";
-import App from "./components/App/App";
+import { createRoot } from "react-dom/client";
+import { StrictMode } from "react";
 import "./index.css";
+import App from "./App";
+import { BrowserRouter } from "react-router-dom";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <BrowserRouter
+      future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+    >
+      <App />
+    </BrowserRouter>
+  </StrictMode>
 );
